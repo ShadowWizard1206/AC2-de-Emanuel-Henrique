@@ -16,8 +16,6 @@
             const palpite = +document.getElementById("palpite").value;
             const resultado = document.getElementById("resultado");
 
-            if (!palpite) return resultado.innerText = "Por favor, digite um número válido.";
-
             if (palpite === numeroSecreto) {
                 resultado.innerText = `Parabéns! Você acertou! O número era ${numeroSecreto}.`;
             } else {
