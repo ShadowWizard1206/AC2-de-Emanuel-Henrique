@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <input type="number" id="palpite" placeholder="Digite seu palpite">
+    <button onclick="adivinhar()">De seu palpite</button>
+    <p id="resultado"></p>
+
+    <script>
+        const numeroSecreto = Math.floor(Math.random() * 100) + 1;
+
+        function adivinhar() {
+            const palpite = +document.getElementById("palpite").value;
+            const resultado = document.getElementById("resultado");
+
+            if (!palpite) return resultado.innerText = "Por favor, digite um número válido.";
+
+            if (palpite === numeroSecreto) {
+                resultado.innerText = `Parabéns! Você acertou! O número era ${numeroSecreto}.`;
+            } else {
+                resultado.innerText = palpite < numeroSecreto ? "O número é maior." : "O número é menor.";
+            }
+
+            document.getElementById("palpite").value = "";
+        }
+    </script>
+</body>
+</html>

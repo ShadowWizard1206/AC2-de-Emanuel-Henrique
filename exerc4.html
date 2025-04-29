@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Escolha seu personagem:</h3>
+
+<input type="radio" id="mago" name="personagem" value="Mago"> Mago
+<input type="radio" id="guerreiro" name="personagem" value="Guerreiro"> Guerreiro
+<input type="radio" id="arqueiro" name="personagem" value="Arqueiro"> Arqueiro
+
+<br><br>
+
+<button onclick="confirmarEscolha()">Confirmar Escolha</button>
+
+<p id="mensagem"></p>
+<img id="imagem" src="" alt="" style="display:none; width: 400px;">
+
+<script>
+function confirmarEscolha() {
+  let personagem = document.querySelector('input[name="personagem"]:checked');
+  
+  
+  let escolha = personagem.value;
+  let mensagem = "";
+  let imagemSrc = "";
+
+  if (escolha === "Mago") {
+    mensagem = "Você escolheu ser um Mago! Avada Kedavra";
+    imagemSrc = "mago.jpg"
+  } else if (escolha === "Guerreiro") {
+    mensagem = "Você escolheu ser um Guerreiro! Eu tenho a força!";
+    imagemSrc = "guerreiro.jpg"; 
+  } else if (escolha === "Arqueiro") {
+    mensagem = "Você escolheu ser um Arqueiro! ";
+    imagemSrc = "arqueiro.jpg"; 
+  }
+
+  document.getElementById("mensagem").innerText = mensagem;
+  let img = document.getElementById("imagem");
+  img.src = imagemSrc;
+  img.style.display = "block";
+}
+</script>
+
+</body>
+</html>
