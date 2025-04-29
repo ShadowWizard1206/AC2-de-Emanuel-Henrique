@@ -16,8 +16,13 @@
             const palpite = +document.getElementById("palpite").value;
             const resultado = document.getElementById("resultado");
 
+            if (!palpite) {
+                resultado.innerText = "Por favor, digite um número válido.";
+                return;
+            }
+
             if (palpite === numeroSecreto) {
-                resultado.innerText = `Parabéns! Você acertou! O número era ${numeroSecreto}.`;
+                resultado.innerText = "Parabéns! Você acertou! O número era " + numeroSecreto + ".";
             } else {
                 resultado.innerText = palpite < numeroSecreto ? "O número é maior." : "O número é menor.";
             }
